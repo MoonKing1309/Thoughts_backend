@@ -2,6 +2,7 @@ const userCollection = require("../model/userSchema")
 const bcrypt = require("bcrypt")
 
 const userLogin = async (req,res)=>{
+    console.log("here")
     try {
         const {userName,userPwd} = req.body;
         var data;
