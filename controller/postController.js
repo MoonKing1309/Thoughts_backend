@@ -12,7 +12,7 @@ const postCreate = async (req,res)=>{
         var postYear = postdate.slice(0,4)
         var postMonth = postdate.slice(6,7)
         var postDate = postdate.slice(8,10)
-        var temp1 = new Date().toLocaleTimeString().split(':')
+        var temp1 = new Date().toLocaleTimeString({timeZone: 'Asia/Kolkata'}).split(':')
         var temp2 = temp1[0] + ":" + temp1[1] + " "
         postText = temp2 + postText
         var post = await postCollection.findOne({userID:userID,postDate:parseInt(postDate),postMonth:parseInt(postMonth),postYear:parseInt(postYear)})
